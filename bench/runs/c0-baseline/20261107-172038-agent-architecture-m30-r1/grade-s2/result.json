@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 28860,
+  "stop_reason": "end_turn",
+  "session_id": "ba0c45eb-c180-4a8f-919c-3eda55485954",
+  "total_cost_usd": 0.1482232,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 27031,
+    "cache_read_input_tokens": 78572,
+    "output_tokens": 3223,
+    "output_tokens_details": {
+      "thinking_tokens": 210
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 27031,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 499,
+        "cache_read_input_tokens": 39195,
+        "cache_creation_input_tokens": 2291,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 2291
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 3223,
+      "cacheReadInputTokens": 78572,
+      "cacheCreationInputTokens": 27031,
+      "webSearchRequests": 0,
+      "costUSD": 0.1482232,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 210,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 27031,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 13,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I graded `submissions/s2.json` and wrote the grades to `grades/0001-s2.json`. Three answers were correct, two partial and one wrong.\n\n| Item | Verdict | Feedback |\n|---|---|---|\n| q1 | Correct | The loop is what makes a system an agent. |\n| q2 | Correct | The model only outputs a request naming the tool and its arguments, and the program runs it. |\n| q3 | Wrong (M6) | You chose to leave the stuck agent running. It needs a stopping condition such as a step limit, which also caps your model spend. |\n| q4 | Partial (M4) | 4 is the right count, but you said the model runs the tools. It only requests them, and the program runs them. |\n| q5 | Correct | You gave both parts: the result goes back as the next input, and the model uses it to decide what to do next. |\n| q6 | Partial | The name helps, but the model picks a tool from the whole description: name, purpose and parameters. |\n\nYou have the loop and the model-versus-program split down. The two gaps are stopping conditions and tool descriptions.\n\nI also added learning record `0003` and updated `NOTES.md`. `submissions/s1.json` is still ungraded.\n\n**Next step:** pick one makerspace tool, such as `check_calendar`, and write its name, a one-sentence description and its parameters. Then write what the model outputs when it uses the tool and what the program does with that output. That covers the q4 and q6 gaps. Tell me when you've done it and I'll check it.",
+  "ttft_ms": 2528,
+  "type": "result",
+  "duration_ms": 29087,
+  "uuid": "c7391b48-884d-44d4-8730-97c76762175c",
+  "ttft_stream_ms": 2166,
+  "time_to_request_ms": 97,
+  "first_content_frame_ms": 2166,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 3223,
+      "cacheReadInputTokens": 78572,
+      "cacheCreationInputTokens": 27031,
+      "webSearchRequests": 0,
+      "costUSD": 0.1482232,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 210,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 27031,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-20T19:47:14.372Z"
+}

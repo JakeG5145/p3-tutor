@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cheat sheet: context and memory</title>
+  <style>
+    body { max-width: 40rem; margin: 0 auto; padding: 2rem 1rem; font-family: Georgia, serif; line-height: 1.5; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { text-align: left; vertical-align: top; padding: 0.4rem; border-bottom: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+<h1>Context and memory (one page)</h1>
+<table>
+  <tr><th>Idea</th><th>In short</th></tr>
+  <tr><td>Context window</td><td>All text the model sees in one call, output included. Limited; every token costs.</td></tr>
+  <tr><td>Between steps</td><td>The program resends the whole growing transcript each call. The model keeps nothing.</td></tr>
+  <tr><td>Between sessions</td><td>Nothing, unless you save it and load it back.</td></tr>
+  <tr><td>Notes</td><td>Small stable facts (a student's training date) in a file; read at the start, updated at the end.</td></tr>
+  <tr><td>Retrieval</td><td>Search a large store, put only the best few chunks in the window.</td></tr>
+  <tr><td>Live facts</td><td>Use a tool (calendar), not a note.</td></tr>
+  <tr><td>Context rot</td><td>More tokens can mean worse recall; keep context small and relevant.</td></tr>
+</table>
+<p><strong>Cost rule:</strong> input tokens = the sum over all calls of the whole context at that call, so a long tool result is paid for again by every later call.</p>
+<p>Sources: <a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents">Effective context engineering</a>, <a href="https://platform.claude.com/docs/en/build-with-claude/context-windows">Context windows</a>, <a href="https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool">Memory tool</a>.</p>
+</body>
+</html>

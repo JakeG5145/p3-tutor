@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 18786,
+  "stop_reason": "end_turn",
+  "session_id": "68321945-b734-4580-9cdd-766836240cc1",
+  "total_cost_usd": 0.0927612,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 16769,
+    "cache_read_input_tokens": 69732,
+    "output_tokens": 1870,
+    "output_tokens_details": {
+      "thinking_tokens": 535
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 16769,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 705,
+        "cache_read_input_tokens": 30390,
+        "cache_creation_input_tokens": 834,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 834
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1870,
+      "cacheReadInputTokens": 69732,
+      "cacheCreationInputTokens": 16769,
+      "webSearchRequests": 0,
+      "costUSD": 0.0927612,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 535,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16769,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 7,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Here is tool calling as an everyday picture, with no code.\n\n**The windowless office.** Imagine a manager in a room with no windows, no phone and no computer. The only things they have are a pen, paper, and a slot in the door. They are very good at reading and reasoning, but they can't touch anything in the outside world.\n\nOutside the door is a runner. Taped to the door is a **menu of errands** the runner can do. For example:\n- \"Look up the booking calendar for a machine on a given day.\"\n- \"Book a time slot.\"\n- \"Find a page in the manuals.\"\n\nEach errand has a short description of what it does and what details the runner needs.\n\nA student asks: \"Can I use the laser cutter Friday afternoon?\" The slip is pushed into the room.\n\n1. The manager reads the question and the menu. They can't answer yet, so they write a slip: *\"Errand: check calendar. Machine: laser cutter. Day: Friday.\"* They push it out.\n2. The runner does the errand and slides back a slip: *\"Free 2–4pm.\"* The manager never left the room.\n3. The manager reads that and writes the answer for the student, or asks for another errand if they need one.\n\n**The idea in one line:** the model never does anything itself. It only writes down which errand it wants and with what details. Your program is the runner who actually does it and brings back the result. The loop in your notes (ask, carry out, result comes back, repeat until done) is this slip-passing, repeated.\n\n**Why this matters for your tool descriptions.** The manager picks errands only by reading the menu. A vague line like \"calendar stuff\" gets wrong or missing slips. A clear one gets the right slip. That is what your \"write a clear description for a tool\" goal is about.\n\n**Where the analogy breaks.** The manager here remembers the whole pile of slips on their desk. A real model only sees what is sent to it each time, and that pile costs money to re-read. That is the context and cost topic we're heading toward.\n\nQuick check: in the makerspace assistant, who actually looks at the booking calendar, the model or your program? And what does the model send to make that happen?\n\nIf it would help, I can turn this into a 15-minute lesson with a worked makerspace example.",
+  "ttft_ms": 2501,
+  "type": "result",
+  "duration_ms": 19004,
+  "uuid": "9b3c9c84-54fc-4840-8cbe-0c44191fb761",
+  "ttft_stream_ms": 2128,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 2128,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1870,
+      "cacheReadInputTokens": 69732,
+      "cacheCreationInputTokens": 16769,
+      "webSearchRequests": 0,
+      "costUSD": 0.0927612,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 535,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16769,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-20T19:47:14.372Z"
+}

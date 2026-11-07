@@ -1,0 +1,45 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The dividing line is who owns the control flow: in a workflow, predefined code decides the sequence of steps; in an agent, the model decides its own steps and tool use. Counting model calls (a) or tools (c) does not separate them, since workflows can call a model several times and use tools, and the number of models (d) is irrelevant.",
+      "distractors": {"a": "M8", "c": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "c",
+      "rationale": "The model is called inside steps, but the code fixes the order and chooses each next step, so this is a workflow. Using a model and a tool (a) or taking several steps (b) does not make something an agent; the number of tools (d) is not the test.",
+      "distractors": {"a": "M7", "b": "M8"}
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "When the steps are known and the same every time, code can enforce the order, which is more reliable and gives a predictable number of model calls and cost. Agents are the more flexible option, not workflows (b), and either can call tools in order (c, d).",
+      "distractors": {"b": "M9"}
+    },
+    {
+      "id": "q4",
+      "answer": "Code owns the control flow in the booking part, and the model owns it in the manual-question part.",
+      "accepted": [
+        "The program decides in booking and the model decides for manual questions.",
+        "Booking is code-controlled; manual questions are model-controlled.",
+        "In booking the code decides the next step, in manual questions the model decides."
+      ],
+      "rationale": "Full credit needs both halves the right way round: code for the fixed booking steps, model for the manual search. Reversing them, or saying the model owns both, is wrong. Giving only one half correctly is partial."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "An agent pays off when the steps cannot be listed in advance, as in diagnosing a failed print, where each finding decides the next check. Booking (a), reminders (b) and opening hours (c) follow a known path and are better as fixed workflows, which are cheaper and more predictable.",
+      "distractors": {"a": "M7", "b": "M7", "c": "M7"}
+    },
+    {
+      "id": "q6",
+      "answer": 30,
+      "tolerance": 0,
+      "rationale": "Extra calls per request: 5 - 2 = 3. Over 1,000 requests that is 3,000 extra calls at $0.01 each, so $30. Answering 50 or 20 computes the cost of only one side instead of the difference."
+    }
+  ]
+}

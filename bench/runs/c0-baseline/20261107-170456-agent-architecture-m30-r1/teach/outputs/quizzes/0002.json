@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant helped a student on Monday. On Wednesday the same student starts a new session, and the program sends the model only the instructions and the new question. What does the model know about Monday?",
+      "options": [
+        {"id": "a", "text": "Everything, because the model keeps its own memory of past chats"},
+        {"id": "b", "text": "Nothing, because only what the program sends is in its context"},
+        {"id": "c", "text": "A summary, because models store a short digest of each chat"},
+        {"id": "d", "text": "Everything, as long as the context window is large enough"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent's fixed instructions and tool descriptions take 2,000 tokens, and the question takes 100. The agent makes three model calls: call 1 sends the fixed part and the question; a tool result of 500 tokens is added before call 2; a second tool result of 400 tokens is added before call 3. Ignore the tokens the model writes. How many input tokens are sent in total across the three calls?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "You want the assistant to know that a student passed laser cutter training, so it can greet them correctly next semester. Which design is best?",
+      "options": [
+        {"id": "a", "text": "Save the whole chat in notes and send all of it each time"},
+        {"id": "b", "text": "Save a small training-status record and load it at session start"},
+        {"id": "c", "text": "Rely on a larger context window to carry it over to next semester"},
+        {"id": "d", "text": "Put every student's training status in the instructions for all calls"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences, why is it usually better to retrieve a few relevant chunks of the manuals for each question than to put all the manuals into the context?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "The assistant told a student that a machine was free on Friday, using a booking summary it saved in its notes two weeks ago. The machine had been booked since. What design mistake caused this?",
+      "options": [
+        {"id": "a", "text": "It copied a changing fact into notes instead of looking it up"},
+        {"id": "b", "text": "It saved too few tokens of notes to keep the answer current"},
+        {"id": "c", "text": "It used retrieval where it should have used a bigger window"},
+        {"id": "d", "text": "It cleared old tool results before the model finished reading them"}
+      ]
+    }
+  ]
+}

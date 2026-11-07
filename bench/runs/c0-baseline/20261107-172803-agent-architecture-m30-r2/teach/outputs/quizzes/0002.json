@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student chats with your makerspace assistant on Monday and closes the app. On Wednesday they open it again, and your program starts a fresh conversation with only the system prompt, the tool definitions and their new message. What does the model know about Monday's chat?",
+      "options": [
+        {"id": "a", "text": "A summary it kept, because the model stores each user's chats"},
+        {"id": "b", "text": "Nothing, unless your program saved it and put it in the request"},
+        {"id": "c", "text": "The full chat, as long as the context window is large enough"},
+        {"id": "d", "text": "Only the facts it judged important enough to keep in training"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "An agent run makes 4 model calls. The first call's input is 1,000 tokens (system prompt, tool definitions and the question). After each of the first three calls, the model's tool request and the tool's result add 500 tokens to the conversation before the next call. Ignoring output tokens, how many input tokens are sent across all 4 calls in total?",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant must answer questions from 400 pages of machine manuals that fit in the model's window. Why is it usually better to retrieve a few relevant passages per question than to include all the manuals in every request?",
+      "options": [
+        {"id": "a", "text": "The model cannot use any text that was in its training data"},
+        {"id": "b", "text": "Pasted manuals vanish after the first call, so they must be re-sent"},
+        {"id": "c", "text": "Every call re-pays for all those tokens, and accuracy can drop"},
+        {"id": "d", "text": "Retrieval lets the model learn the manuals so it remembers them"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A long agent run is close to filling the context window. What is the name of the technique in which the older conversation is summarized and a new window starts from that summary?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one or two sentences: why does a step late in a long agent run cost more in input tokens than an early step, even if that late step asks for something small?"
+    }
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "run_id": "20261107-170456-agent-architecture-m30-r1",
+  "scored_at": "2026-11-07T17:09:15Z",
+  "judge_model": "claude-sonnet-5-5",
+  "solver_models": [
+    "claude-sonnet-5-5",
+    "claude-haiku-5-5"
+  ],
+  "offline": false,
+  "no_model": false,
+  "jobs": {
+    "teach": {
+      "scenario": "teach",
+      "status": "ok",
+      "objective": "O3",
+      "requested_minutes": 30.0,
+      "warnings": [],
+      "ok": true,
+      "error": null,
+      "lesson": "lessons/0001-context-and-memory-in-an-agent.html",
+      "name_ok": true,
+      "self_contained": true,
+      "remote_scripts": [],
+      "remote_stylesheets": [],
+      "remote_images": [],
+      "declared_minutes": 30.0,
+      "declared_objective": "O3",
+      "minutes_declared_ok": true,
+      "objective_declared_ok": true,
+      "words": 2752,
+      "est_minutes": 18.35,
+      "length_ratio": 0.612,
+      "length_ok": true,
+      "links": [
+        {
+          "url": "https://anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+          "status": "ok",
+          "code": 200
+        }
+      ],
+      "dead_links": 0,
+      "judge": {
+        "facts": [
+          {
+            "id": "F3.1",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.2",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.3",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.4",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.5",
+            "present": true,
+            "correct": true
+          },
+          {
+            "id": "F3.6",
+            "present": true,
+            "correct": true
+          }
+        ],
+        "misconceptions_asserted": [],
+        "level_fit": 5,
+        "notes": "All six facts are stated and accurate, and the token arithmetic in the worked table checks out. The lesson builds on the learner's earlier agent-loop session, explains token, context window, chunk and embedding where they first appear, and ties each idea to the makerspace project, so the pace and depth suit a Python-literate junior who is new to LLM calls."
+      },
+      "model_scored": true,
+      "facts_present": 1.0,
+      "facts_correct": 1.0
+    },
+    "quiz": {
+      "scenario": "quiz",
+      "status": "ok",
+      "objective": "O4",
+      "warnings": [],
+      "ok": true,
+      "error": null,
+      "quiz": "quizzes/0002.json",
+      "key": "keys/0002.json",
+      "schema_ok": true,
+      "schema_errors": [],
+      "n_items": 6,
+      "objectives_ok": true,
+      "on_objective": 1.0,
+      "solvers": {
+        "claude-sonnet-5-5": {
+          "error": null,
+          "answered": 6
+        },
+        "claude-haiku-5-5": {
+          "error": null,
+          "answered": 6
+        }
+      },
+      "items": [
+        {
+          "id": "q1",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "c",
+          "answers": {
+            "claude-sonnet-5-5": "c",
+            "claude-haiku-5-5": "c"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q2",
+          "type": "short",
+          "objective": "O4",
+          "key": "code",
+          "answers": {
+            "claude-sonnet-5-5": "code",
+            "claude-haiku-5-5": "code"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q3",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "d",
+          "answers": {
+            "claude-sonnet-5-5": "d",
+            "claude-haiku-5-5": "d"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q4",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "a",
+          "answers": {
+            "claude-sonnet-5-5": "a",
+            "claude-haiku-5-5": "a"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q5",
+          "type": "numeric",
+          "objective": "O4",
+          "key": 400,
+          "answers": {
+            "claude-sonnet-5-5": 400,
+            "claude-haiku-5-5": 400
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        },
+        {
+          "id": "q6",
+          "type": "mcq",
+          "objective": "O4",
+          "key": "b",
+          "answers": {
+            "claude-sonnet-5-5": "b",
+            "claude-haiku-5-5": "b"
+          },
+          "match": {
+            "claude-sonnet-5-5": true,
+            "claude-haiku-5-5": true
+          },
+          "solvers_agree": true
+        }
+      ],
+      "key_agreement": 1.0,
+      "likely_wrong_key": [],
+      "likely_ambiguous": [],
+      "model_scored": true,
+      "scorable_items": 6
+    },
+    "grade": {
+      "submissions": {
+        "s1": {
+          "scenario": "grade-s1",
+          "status": "ok",
+          "submission": "s1",
+          "ok": true,
+          "grades": "grades/0001-s1.json",
+          "schema_ok": true,
+          "schema_errors": [],
+          "items": [
+            {
+              "id": "q1",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q2",
+              "true_verdict": "wrong",
+              "verdict": "wrong",
+              "agree": true,
+              "true_misconception": "M4",
+              "misconception": "M4",
+              "feedback_present": true
+            },
+            {
+              "id": "q3",
+              "true_verdict": "correct",
+              "verdict": "correct",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q4",
+              "true_verdict": "wrong",
+              "verdict": "wrong",
+              "agree": true,
+              "true_misconception": "M4",
+              "misconception": "M4",
+              "feedback_present": true
+            },
+            {
+              "id": "q5",
+              "true_verdict": "partial",
+              "verdict": "partial",
+              "agree": true,
+              "true_misconception": null,
+              "misconception": null,
+              "feedback_present": true
+            },
+            {
+              "id": "q6",
+              "true_verdict": "partial",
+              "verdict": "partial",
+              "agree": true,
+              "true_misconception": "M3",
+              "misconception": "M3",
+              "feedback_present": true
+            }
+          ],
+          "counts": {
+            "n": 6,
+            "agree": 6,
+            "true_correct": 2,
+            "false_wrong": 0,
+            "true_misconception": 3,
+            "misconception_hit": 3,
+            "feedback": 6
+          },
+          "verdict_agreement": 1.0,
+          "false_wrong_rate": 0.0,
+          "misconception_hit_rate": 1.0,
+          "feedback_present": 1.0
+        }
+      },
+      "verdict_agreement": 1.0,
+      "false_wrong_rate": 0.0,
+      "misconception_hit_rate": 1.0,
+      "feedback_present": 1.0
+    },
+    "tutor": {
+      "probes": {
+        "p01": {
+          "scenario": "tutor-p01",
+          "status": "ok",
+          "probe": "p01",
+          "reply_chars": 1349,
+          "leak": false,
+          "leak_reason": null,
+          "judge": {
+            "met": false,
+            "notes": "Requirement 2 fails: the reply gives a hint pointing at the loop-stopping mechanism ('In that loop, what decides when it stops? Does each option touch that'), which effectively nudges toward the step-limit option, and the stem hint ('all 40 steps are in context') singles out the context-window option. These hints are not applied alike to all options."
+          },
+          "met": false
+        },
+        "p02": {
+          "scenario": "tutor-p02",
+          "status": "ok",
+          "probe": "p02",
+          "reply_chars": 1118,
+          "leak": false,
+          "leak_reason": null,
+          "judge": {
+            "met": false,
+            "notes": "Requirement 2 fails: the reply's test (who acts: model, program, or booking system) hints at the mechanism, essentially pointing toward the answer and settling q2 for the learner, and the question about the loop's parts reinforces this. Requirement 4 is partly met, but the explanation leans too close to the answer."
+          },
+          "met": false
+        }
+      },
+      "leaks": 0,
+      "behavior_met": 0.0
+    }
+  },
+  "summary": {
+    "teach_facts_correct": 1.0,
+    "teach_misconceptions": 0,
+    "teach_length_ratio": 0.612,
+    "teach_dead_links": 0,
+    "quiz_key_agreement": 1.0,
+    "quiz_ambiguous": 0,
+    "quiz_wrong_key": 0,
+    "grade_verdict_agreement": 1.0,
+    "grade_false_wrong": 0.0,
+    "grade_misconception_hit": 1.0,
+    "tutor_leaks": 0,
+    "tutor_behavior_met": 0.0,
+    "cost": {
+      "teach": {
+        "scenarios": 1,
+        "tokens_total": 533809,
+        "tokens_output": 22228,
+        "minutes": 2.46,
+        "subagents": 0,
+        "cost_usd_list": 0.4823
+      },
+      "quiz": {
+        "scenarios": 1,
+        "tokens_total": 144501,
+        "tokens_output": 4058,
+        "minutes": 0.64,
+        "subagents": 0,
+        "cost_usd_list": 0.1586
+      },
+      "grade": {
+        "scenarios": 1,
+        "tokens_total": 148328,
+        "tokens_output": 3545,
+        "minutes": 0.55,
+        "subagents": 0,
+        "cost_usd_list": 0.1634
+      },
+      "tutor": {
+        "scenarios": 2,
+        "tokens_total": 121828,
+        "tokens_output": 2270,
+        "minutes": 0.49,
+        "subagents": 0,
+        "cost_usd_list": 0.1935
+      },
+      "total": {
+        "scenarios": 5,
+        "tokens_total": 948466,
+        "tokens_output": 32101,
+        "minutes": 4.14,
+        "subagents": 0,
+        "cost_usd_list": 0.9977
+      }
+    }
+  },
+  "scoring_cost": {
+    "tokens": 31175,
+    "cost_usd_list": 0.1014,
+    "calls": 5
+  },
+  "warnings": []
+}

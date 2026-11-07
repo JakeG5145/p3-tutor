@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 17704,
+  "stop_reason": "end_turn",
+  "session_id": "8c335d59-41d3-4476-9666-b4bb247ec783",
+  "total_cost_usd": 0.0897319,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 16623,
+    "cache_read_input_tokens": 69779,
+    "output_tokens": 1625,
+    "output_tokens_details": {
+      "thinking_tokens": 341
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 16623,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 592,
+        "cache_read_input_tokens": 30449,
+        "cache_creation_input_tokens": 629,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 629
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1625,
+      "cacheReadInputTokens": 69779,
+      "cacheCreationInputTokens": 16623,
+      "webSearchRequests": 0,
+      "costUSD": 0.0897319,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 341,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16623,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 7,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Neither five nor ten, because the premise is wrong. More agents do not always give better results.\n\nStart with an everyday case. Say a student asks, \"Can I book the laser cutter Thursday at 3?\" One agent can check the calendar, check their training status and book the slot. Now split that across five agents: a router, a calendar agent, a training agent, a booking agent and a summarizer. Each one needs its own instructions and its own copy of the context. They also have to pass messages to each other, and every handoff can drop a detail (\"Thursday\" turns into the wrong date). You pay for every model call, and you get the same answer.\n\nHere is the general idea. A **multi-agent system** is several model-driven loops that hand work to each other. It pays off in two situations:\n\n- The work splits into independent pieces that can run in parallel, such as researching ten topics at once.\n- One agent's context would get too big or cluttered to do the job well.\n\nAnthropic's write-up on its multi-agent research system reports that agents use several times more tokens than a plain chat, and multi-agent setups several times more again. I'm quoting that figure from memory, so check it in the original post before it goes in a design review. For a small model budget, that cost matters.\n\nFor your assistant, the defensible starting design is one agent with a few well-described tools: manual search, calendar check and booking. Make the predictable steps fixed workflow, for example always verifying training status before a booking. Split off a second agent only when you can name a concrete problem a single agent has, such as manuals so long that they crowd out the booking conversation.\n\nQuestion for you: what specific problem would you expect a sixth agent to solve that the first five don't?\n\nIf you want, I can teach a lesson on \"when splitting into several agents pays off,\" since it's one of your mission's success criteria. Context and memory is next in your plan, so say which you'd rather do first.",
+  "ttft_ms": 2715,
+  "type": "result",
+  "duration_ms": 17897,
+  "uuid": "bc654d4f-3239-4d3c-bbc0-c33752610946",
+  "ttft_stream_ms": 1968,
+  "time_to_request_ms": 83,
+  "first_content_frame_ms": 1969,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1625,
+      "cacheReadInputTokens": 69779,
+      "cacheCreationInputTokens": 16623,
+      "webSearchRequests": 0,
+      "costUSD": 0.0897319,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 341,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16623,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-20T19:47:14.372Z"
+}

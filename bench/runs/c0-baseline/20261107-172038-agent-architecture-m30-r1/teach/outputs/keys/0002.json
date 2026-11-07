@@ -1,0 +1,38 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "The model keeps nothing between sessions; only what the program places in the new context is available. Options a, b and d each assume the model stores or learns from conversations, which is the misconception that assistants remember automatically.",
+      "distractors": {"a": "M3", "b": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 4650,
+      "tolerance": 0,
+      "rationale": "Call 1 input is 1,000 + 100 = 1,100. Call 2 adds one tool step (450): 1,550. Call 3 adds a second: 2,000. Total 1,100 + 1,550 + 2,000 = 4,650. Answering 2,000 counts only the last call and forgets that every call resends the whole context; 1,100 + 450 + 450 = 2,000 shows the same slip."
+    },
+    {
+      "id": "q3",
+      "answer": "a",
+      "rationale": "Retrieval puts only the relevant pages in the context, which keeps cost down and avoids context rot. Pasting everything (b) pays for 600 pages in every call and dilutes attention; a notes file (c) is read back into the context so it has the same cost; training (d) does not contain this makerspace's manuals."
+    },
+    {
+      "id": "q4",
+      "answer": "It persists after the session ends, so a later session can read it back.",
+      "accepted": [
+        "It survives between sessions",
+        "It keeps information after the conversation ends and can be read into a new context",
+        "It persists across sessions",
+        "It stores information outside the context window that lasts beyond the session"
+      ],
+      "rationale": "The context window is rebuilt for each call and gone when the session ends; a notes file lives outside it and lasts, so a later session can load it. Saying it is bigger than the window, or that the model learns from it, is wrong: the point is persistence."
+    },
+    {
+      "id": "q5",
+      "answer": "d",
+      "rationale": "A completed training date is a stable fact about one student that is costly to re-ask. Availability (a) goes stale and the calendar tool gives the live answer; the manual (b) belongs in retrieval; reasoning (c) is working detail of one session, not something the next visit needs."
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which statement correctly separates a workflow from an agent?",
+      "options": [
+        {"id": "a", "text": "A workflow calls the model once, while an agent calls it many times"},
+        {"id": "b", "text": "A workflow has code fix the steps, while an agent has the model choose them"},
+        {"id": "c", "text": "A workflow never uses any tools, while an agent always uses some tools"},
+        {"id": "d", "text": "A workflow is built on several models, while an agent is built on one"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your assistant handles every booking request the same way. Program code calls the model to pull the machine, date and time out of the student's message. Code then calls check_calendar. If the slot is free, code calls the model to write a confirmation. The steps and their order never change. What is this?",
+      "options": [
+        {"id": "a", "text": "An agent, because it uses a language model and also calls a tool"},
+        {"id": "b", "text": "An agent, because it takes several steps to finish a single request"},
+        {"id": "c", "text": "A workflow, because the code, not the model, picks each next step"},
+        {"id": "d", "text": "A workflow, because it relies on one single tool in the whole run"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Booking always needs the same four steps: extract the details, check the calendar, create the booking, confirm. A wrong booking wastes scarce machine time. What is the strongest reason to build booking as a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "The steps are known in advance, so code can enforce their order and the cost stays predictable"},
+        {"id": "b", "text": "A fixed workflow copes with unexpected requests better than an agent can, so it is safer here"},
+        {"id": "c", "text": "A model can only follow a sequence of steps when an agent loop is the one running them"},
+        {"id": "d", "text": "An agent is unable to call tools such as check_calendar and create_booking in a set order"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In your assistant, code always runs the booking steps in a fixed order, but for a manual question the model decides which searches to run and when it has enough. In one sentence, who owns the control flow in the booking part, and who owns it in the manual-question part?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which of these makerspace jobs is the best candidate for an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Booking a slot after the student has given the machine, date and time"},
+        {"id": "b", "text": "Sending every student a reminder the evening before their booking"},
+        {"id": "c", "text": "Replying with the opening hours whenever a student asks about them"},
+        {"id": "d", "text": "Diagnosing why a student's print failed, when the needed checks are unknown in advance"}
+      ]
+    },
+    {
+      "id": "q6",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "A fixed workflow makes exactly 2 model calls per request. An agent doing the same job averages 5 model calls per request. Assume every model call costs $0.01. Over 1,000 requests, how many more dollars does the agent cost than the workflow?",
+      "unit": "dollars"
+    }
+  ]
+}

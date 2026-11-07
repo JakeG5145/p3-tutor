@@ -1,0 +1,44 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "A model sees only its current input, and a new chat starts with an empty context, so without saved notes loaded by the program nothing from Monday is there. Training does not include the chat (a), and chat history is not kept inside the model (c); both show M3, the belief that the model remembers earlier sessions automatically. Option d is wrong because the window is not the issue; the information is simply absent.",
+      "distractors": {"a": "M3", "c": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 8700,
+      "tolerance": 0,
+      "rationale": "Each call re-sends the whole history. Call 1: 1,900. Call 2: 1,900 + 100 + 600 = 2,600. Call 3: 2,600 + 100 + 1,500 = 4,200. Total 1,900 + 2,600 + 4,200 = 8,700. An answer of 4,200 counts only the last call; an answer near 4,200 minus the first calls' tokens, built by adding only the new tokens, forgets that earlier history is re-sent on every call."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "accepted": [],
+      "rationale": "Retrieval keeps the context small: the search tool returns only the few relevant chunks, labeled by machine and section, so each call pays for a small excerpt. Pasting everything (a) or loading it all as notes (d) costs tokens on every call and invites context rot; one-page summaries (b) lose the detail needed to answer settings questions.",
+      "distractors": {}
+    },
+    {
+      "id": "q4",
+      "answer": "A summary can drop or change details, and it belongs to one session, whereas notes or a table keep the exact fact and can be loaded in any later session.",
+      "accepted": [
+        "Compaction is lossy and may lose the exact status; saved notes stay exact and persist across sessions.",
+        "Summaries can leave out details and do not last past the session; a table stays exact."
+      ],
+      "rationale": "Full credit names that compaction is lossy (details can be dropped or altered) or that the summary lives only in that session, ideally both. Saying only that notes are bigger or newer is partial."
+    },
+    {
+      "id": "q5",
+      "answer": "Your application does; the model only requests the file operations.",
+      "accepted": [
+        "The application",
+        "The application, since the model only asks for the operations",
+        "Your program runs them, the model just requests them"
+      ],
+      "rationale": "The memory tool is client-side: the model outputs a request such as view or create, and the application runs it against storage it controls, returning the result as a tool result. Answering 'the model' shows M4, that the model runs tools itself.",
+      "distractors": {}
+    }
+  ]
+}

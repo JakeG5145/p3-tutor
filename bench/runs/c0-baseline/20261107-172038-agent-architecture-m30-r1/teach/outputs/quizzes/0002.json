@@ -1,0 +1,56 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "A student chats with your makerspace assistant on Monday and opens a brand-new chat on Friday. Your program saves nothing from Monday. What does the model know about Monday's chat on Friday?",
+      "options": [
+        {"id": "a", "text": "A summary it wrote itself, kept inside the model between chats"},
+        {"id": "b", "text": "Everything said, because models store each conversation they have"},
+        {"id": "c", "text": "Nothing, unless the program puts Monday's details into its context"},
+        {"id": "d", "text": "The key points, because use gradually updates what the model knows"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your assistant's rules and tool descriptions take 1,000 tokens and the student's question takes 100. It calls two tools in turn; each tool step (the model's request plus the tool's result) adds 450 tokens to the context. After the second result, the model writes the final answer. Across all three model calls, how many input tokens are sent in total? (Ignore the model's output tokens.)",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your assistant must answer from a 600-page set of machine manuals, but each question needs only one or two pages. Which design best fits your small budget and accuracy goals?",
+      "options": [
+        {"id": "a", "text": "A search tool that returns the few best-matching pages for each question"},
+        {"id": "b", "text": "Pasting all 600 pages into the context so nothing can be missed"},
+        {"id": "c", "text": "Writing all 600 pages into the notes file that the assistant reads first"},
+        {"id": "d", "text": "Relying on the model's training, since it has seen many manuals"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "In one sentence, what can a notes file do that the context window cannot?"
+    },
+    {
+      "id": "q5",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "At the end of a visit, which one of these should the assistant save as a note for that student's next visit?",
+      "options": [
+        {"id": "a", "text": "The laser cutter is booked solid until Thursday afternoon"},
+        {"id": "b", "text": "The complete text of the laser cutter manual's safety chapter"},
+        {"id": "c", "text": "The model's step-by-step reasoning while it checked the calendar"},
+        {"id": "d", "text": "The student completed laser cutter training on 14 October"}
+      ]
+    }
+  ]
+}

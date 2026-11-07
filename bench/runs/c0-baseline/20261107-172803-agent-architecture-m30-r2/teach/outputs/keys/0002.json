@@ -1,0 +1,35 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The model keeps nothing between calls; it only uses the tokens in the request. Memory across sessions has to be saved by the program and loaded back. Option a or d shows M1 (the model remembers by itself); option c shows M2 (a bigger window is memory across sessions).",
+      "distractors": {"a": "M1", "c": "M2", "d": "M1"}
+    },
+    {
+      "id": "q2",
+      "answer": 7000,
+      "tolerance": 0,
+      "rationale": "Each call resends everything so far: 1,000 + 1,500 + 2,000 + 2,500 = 7,000. An answer of 2,500 counts only the final context; an answer of 2,000 or 4,000 adds only the new tokens."
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "Everything in the window is resent and billed on every call, and accuracy and recall can degrade as the window fills (context rot). Retrieval keeps the window small.",
+      "distractors": {"a": "M3", "b": "M1", "d": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "compaction",
+      "accepted": ["context compaction", "compacting", "compact", "conversation compaction"],
+      "rationale": "Compaction summarizes a near-full conversation and starts a new window with the summary."
+    },
+    {
+      "id": "q5",
+      "answer": "Each call resends the whole accumulated conversation as input, so the later context is larger.",
+      "accepted": ["because the context has grown and the whole history is sent again with every call", "the entire history, including earlier tool results, is resent on each call", "earlier steps and tool results are included in the input of every later call"],
+      "rationale": "The model keeps nothing between calls, so the program sends all earlier messages and tool results again each time. An answer that says the model 'thinks harder' or 'the task is bigger' misses the resending."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "0002",
+  "objective": "O3",
+  "title": "Context and memory in an agent",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "On Monday a student told your assistant which drill bit she used. On Thursday she starts a brand-new chat and asks, \"Which bit did I use on Monday?\" Your program loads no saved notes. What happens?",
+      "options": [
+        {"id": "a", "text": "The model recalls Monday, because it was trained on that chat"},
+        {"id": "b", "text": "The model cannot know, because nothing from Monday is in its input"},
+        {"id": "c", "text": "The model recalls Monday, because the chat history is kept in the model"},
+        {"id": "d", "text": "The model cannot know, because the context window is too small"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "numeric",
+      "objective": "O3",
+      "stem": "Your program sends the model 1,900 tokens on call 1 (system prompt, tool definitions and the question). The model replies with a 100-token tool request, and the program runs the tool, which returns 600 tokens. The program calls the model again, including the request and the result. The model replies with another 100-token tool request, whose tool returns 1,500 tokens. The program calls the model a third time, and the model writes its final answer. How many input tokens in total were sent across the three calls? Ignore caching and the model's final answer.",
+      "unit": "tokens"
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O3",
+      "stem": "Your 300-page manual set is far too long to read in full on every request, and each question concerns only one machine. Which design best fits your model budget?",
+      "options": [
+        {"id": "a", "text": "Paste every manual into the system prompt so nothing is missed"},
+        {"id": "b", "text": "Summarize every manual into one page and send it on each call"},
+        {"id": "c", "text": "Give the model a search tool that returns a few labeled chunks"},
+        {"id": "d", "text": "Save the full manuals in a notes file and load it every chat"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O3",
+      "stem": "A long chat is nearly out of room, so the program compacts it into a summary. In one or two sentences, why is a student's exact training status better kept in saved notes or a table than only in that summary?"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O3",
+      "stem": "Your assistant uses a memory tool that saves notes as files between sessions. In one sentence, who actually reads and writes those files: the model or your application?"
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "c",
+      "rationale": "In an agent, the model chooses each next action and when to stop. In options a, b and d the code fixes the path and the model only produces text or a label inside it. Picking b or d shows the belief that any system that calls a model is an agent."
+    },
+    {
+      "id": "q2",
+      "answer": "a",
+      "rationale": "The steps and their order are known in advance, so code should own the control flow and call the model only for the one fuzzy part (reading varied wording). That is predictable and cheap. Varied input wording (c) is not varied steps: a model can read messy text inside a fixed workflow. An agent (b) pays for extra loop calls to decide an order that never changes, and four agents (d) multiply that cost."
+    },
+    {
+      "id": "q3",
+      "answer": "d",
+      "rationale": "An agent pays off when the steps cannot be listed in advance: here the number of lookups and which pages to read depend on what turns up. Options a, b and c have known steps and a known order, so a fixed workflow does them more cheaply and predictably."
+    },
+    {
+      "id": "q4",
+      "answer": "The programmer's code, written in advance",
+      "accepted": [
+        "the code",
+        "the programmer's code",
+        "the programmer",
+        "the developer",
+        "the program",
+        "code written in advance",
+        "the code the programmer wrote",
+        "the developer's code",
+        "predefined code"
+      ],
+      "rationale": "In a fixed workflow the code written in advance owns the control flow and decides the order; in an agent the model does. Calling a model at a step does not make a system an agent. An answer of the model, or of the number of model calls, shows the misconception that using a model makes a system an agent."
+    },
+    {
+      "id": "q5",
+      "answer": 1200,
+      "tolerance": 0,
+      "rationale": "The difference is 5 - 2 = 3 extra calls per request, and 3 x 400 = 1,200 extra calls per week. An answer of 2,000 (the agent's total) or 800 (the workflow's total) answers a different question. This is why a fixed workflow is the better choice when the steps are known: the same result costs fewer calls."
+    },
+    {
+      "id": "q6",
+      "answer": "b",
+      "rationale": "This is routing, a workflow pattern: the code defines every path, and the model only chooses among them. The model never decides the steps inside a handler or when to stop, so the code still owns the control flow. Choosing a or c shows the belief that a model making any decision makes the system an agent; d is false, since one call can do the sorting."
+    }
+  ]
+}

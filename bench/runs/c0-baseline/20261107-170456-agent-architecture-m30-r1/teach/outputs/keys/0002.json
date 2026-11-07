@@ -1,0 +1,39 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The model keeps no state between calls; it knows only what the program sends. A wrong pick of a or d shows the belief that the model or a large window remembers past sessions (M3).",
+      "distractors": {"a": "M3", "c": "M3", "d": "M3"}
+    },
+    {
+      "id": "q2",
+      "answer": 7700,
+      "tolerance": 0,
+      "rationale": "Call 1: 2,100. Call 2: 2,100 + 500 = 2,600. Call 3: 2,600 + 400 = 3,000. Total 2,100 + 2,600 + 3,000 = 7,700. An answer of 3,000 counts only the final context and misses that every call resends everything (M4)."
+    },
+    {
+      "id": "q3",
+      "answer": "b",
+      "rationale": "A small saved record is cheap, exact and survives between sessions. A window does not carry anything over by itself (M3), and saving whole chats or everyone's data wastes tokens and exposes personal data.",
+      "distractors": {"c": "M3"}
+    },
+    {
+      "id": "q4",
+      "answer": "It keeps the context small, so it costs fewer tokens on every call and avoids the model losing detail in a long context.",
+      "accepted": [
+        "cheaper and less context rot",
+        "fewer tokens per call, so lower cost and better recall",
+        "only the relevant text is sent, which saves tokens and keeps the model focused"
+      ],
+      "rationale": "Everything in context is resent and paid for on every call, and long contexts weaken the model's recall of details. Retrieval sends only what the question needs. An answer saying the model learns the manuals shows a misconception (M5)."
+    },
+    {
+      "id": "q5",
+      "answer": "a",
+      "rationale": "Booking availability changes and has its own source; it should be looked up with a tool at question time. A saved copy goes stale, and the assistant states the old fact confidently (M6).",
+      "distractors": {"c": "M3", "b": "M6"}
+    }
+  ]
+}

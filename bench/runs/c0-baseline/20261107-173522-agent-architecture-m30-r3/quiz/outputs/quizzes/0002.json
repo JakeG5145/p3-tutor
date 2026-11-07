@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows, agents and who owns the control flow",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In a system that uses a language model, the control flow is the order of steps: which step runs next, and when the system stops. What makes a system an agent rather than a workflow?",
+      "options": [
+        {"id": "a", "text": "It calls the model more than once to finish one request"},
+        {"id": "b", "text": "The model decides which step or tool comes next and when to stop"},
+        {"id": "c", "text": "It has access to tools such as a booking calendar lookup"},
+        {"id": "d", "text": "It uses a larger model and a longer prompt than a workflow"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A makerspace assistant's Python code always runs these steps in this order: (1) one model call labels the student's message as 'manual question' or 'booking request'; (2) if it is a booking request, code calls the calendar tool; (3) a second model call writes the reply. The model never chooses a step. What is this system?",
+      "options": [
+        {"id": "a", "text": "A workflow, because the code fixes the order of steps"},
+        {"id": "b", "text": "An agent, because it uses a model and a tool together"},
+        {"id": "c", "text": "An agent, because the model makes more than one call"},
+        {"id": "d", "text": "A workflow, because it never uses a tool at all"}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which makerspace task is the best candidate for a fixed workflow instead of an agent?",
+      "options": [
+        {"id": "a", "text": "Helping a student work out why a laser-cut part keeps burning"},
+        {"id": "b", "text": "Answering any question a student might ask about any machine"},
+        {"id": "c", "text": "Confirming a booking: check the slot, reserve it, send a confirmation"},
+        {"id": "d", "text": "Deciding which of several manuals to search for an unusual problem"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Assume every model call costs $0.002, whatever its length. For a booking request, a fixed workflow always makes 3 model calls. An agent doing the same job averages 6 model calls, because it decides each step itself. For 500 booking requests, how many more dollars does the agent cost than the workflow?",
+      "unit": "dollars"
+    },
+    {
+      "id": "q5",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In one sentence, say who decides what happens next in a workflow and who decides it in an agent."
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Your team's budget is small. A student asks, 'My 3D print keeps warping, what should I change?' The right manual pages, and how many lookups are needed, cannot be known in advance. What is the best design for this request?",
+      "options": [
+        {"id": "a", "text": "A fixed workflow with one search of the printer manual, because it is cheapest"},
+        {"id": "b", "text": "A fixed workflow with exactly five searches, because it is predictable"},
+        {"id": "c", "text": "A fixed workflow, because every part of an assistant should be a workflow"},
+        {"id": "d", "text": "An agent with a step limit, because the number of lookups is open-ended"}
+      ]
+    }
+  ]
+}

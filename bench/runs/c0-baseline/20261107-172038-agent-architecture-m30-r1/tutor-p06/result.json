@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 25071,
+  "stop_reason": "end_turn",
+  "session_id": "c2f7a62b-0be5-4a98-8abe-a11cb50ff806",
+  "total_cost_usd": 0.1252861,
+  "usage": {
+    "input_tokens": 8,
+    "cache_creation_input_tokens": 23232,
+    "cache_read_input_tokens": 112421,
+    "output_tokens": 2110,
+    "output_tokens_details": {
+      "thinking_tokens": 780
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 23232,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 523,
+        "cache_read_input_tokens": 36862,
+        "cache_creation_input_tokens": 825,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 825
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2110,
+      "cacheReadInputTokens": 112421,
+      "cacheCreationInputTokens": 23232,
+      "webSearchRequests": 0,
+      "costUSD": 0.1252861,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 780,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23232,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 9,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Picture a manager sitting in an office with no phone, no computer and no window. Next to them is an assistant who can do things, such as phone people and look things up. The manager is smart but can only read notes and write notes.\n\nA student asks, \"Is the laser cutter free Friday?\" The note reaches the manager along with a menu of what the assistant can do, for example \"check the booking calendar (needs a machine and a date)\". The manager can't phone anyone. They write back: \"Please check the calendar for the laser cutter on Friday.\" That note is the **tool call**. It is a request for an action, not the action itself.\n\nThe assistant, who is the program around the model, actually does the lookup. They write the result on a new note: \"Booked 2–4 pm, free otherwise.\" They slide it back. The manager reads it and writes the final reply: \"It's free except 2–4 pm.\"\n\nThree things to hold onto:\n- The menu is the tool descriptions. The manager picks tools only from what the menu says, so a vague description means wrong choices.\n- The manager never does anything. The program carries out every action.\n- Every time the manager answers, they read the whole stack of notes again. They remember nothing between notes except what is on the paper.\n\nThe analogy breaks down in two places. A real manager remembers yesterday, and the model doesn't. Also, a real manager's reading time is free, but the model's costs money per note read, which matters for your budget.\n\nQuick check: if the manager writes \"book the laser cutter for Friday at 3,\" has anything been booked yet? Who would make it happen?\n\nIf you want, I can turn this into a short lesson on writing a good tool description for your booking tool.",
+  "ttft_ms": 2081,
+  "type": "result",
+  "duration_ms": 25297,
+  "uuid": "e876bad0-d610-4db2-ac8b-595b6945cda1",
+  "ttft_stream_ms": 1986,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 1986,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 8,
+      "outputTokens": 2110,
+      "cacheReadInputTokens": 112421,
+      "cacheCreationInputTokens": 23232,
+      "webSearchRequests": 0,
+      "costUSD": 0.1252861,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 780,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 23232,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-20T19:47:14.372Z"
+}

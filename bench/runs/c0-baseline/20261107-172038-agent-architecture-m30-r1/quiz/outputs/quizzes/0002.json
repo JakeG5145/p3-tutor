@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In which of these systems does the model, rather than the programmer's code, own the control flow (the choice of what happens next)?",
+      "options": [
+        {"id": "a", "text": "Code asks the model to summarize a manual page, then always sends that summary to the student."},
+        {"id": "b", "text": "Code asks the model to label a question, then runs the fixed handler for that label."},
+        {"id": "c", "text": "Code gives the model three tools, and the model picks each next call until it is done."},
+        {"id": "d", "text": "Code runs a fixed list of steps, and the model writes the text that each step sends."}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Every booking request at the makerspace needs the same four steps in the same order: read the request details, check the calendar for that slot, book it if it is free, and send a confirmation. The wording of requests varies a lot, but the steps never change, and the model budget is small. Which design fits best?",
+      "options": [
+        {"id": "a", "text": "A fixed workflow: code runs the four steps in order and calls the model only to read the request."},
+        {"id": "b", "text": "An agent with all four steps as tools, so the model can adapt the order for each request."},
+        {"id": "c", "text": "An agent, because the wording of requests differs and only a model can handle varied wording."},
+        {"id": "d", "text": "Four separate agents, one per step, so that every step gets its own model to make decisions."}
+      ]
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which one of these makerspace tasks gives the strongest reason to use an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "A student gives a machine, a date and a time, and the assistant books that slot."},
+        {"id": "b", "text": "After each booking, the assistant sends a confirmation message in a set template."},
+        {"id": "c", "text": "Each night, the assistant lists tomorrow's bookings for the staff in one fixed format."},
+        {"id": "d", "text": "A student asks why a 3D print keeps failing, and which manual pages to check is unknown in advance."}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "short",
+      "objective": "O4",
+      "stem": "A teammate says: \"Our assistant calls a language model at every step, so it is an agent.\" In a few words, what decides whether a system is a fixed workflow rather than an agent: who or what chooses the order of the steps in a fixed workflow?"
+    },
+    {
+      "id": "q5",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "The team is comparing designs for booking requests. The fixed workflow makes exactly 2 model calls per request. The agent design averages 5 model calls per request, because it loops. Assume every call costs the same and there are 400 requests in a week. How many more model calls does the agent design make in that week?",
+      "unit": "calls"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A design has three handlers (booking, manual question, other), each a fixed sequence of steps written in code. For each incoming message, the model's only output is one of the three labels, and the code then runs that handler. Is this a workflow or an agent, and why?",
+      "options": [
+        {"id": "a", "text": "An agent, because the model's label decides what happens to each message."},
+        {"id": "b", "text": "A workflow, because the code fixes every path and the model only picks one of them."},
+        {"id": "c", "text": "An agent, because the model has to read the student's message before anything else."},
+        {"id": "d", "text": "Neither, because sorting messages into handlers always needs several model calls."}
+      ]
+    }
+  ]
+}

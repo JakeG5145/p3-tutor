@@ -1,0 +1,68 @@
+{
+  "id": "0002",
+  "objective": "O4",
+  "title": "Workflows and agents: who owns the control flow?",
+  "items": [
+    {
+      "id": "q1",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "What is the key difference between a workflow and an agent?",
+      "options": [
+        {"id": "a", "text": "A workflow uses no language model, while an agent always uses one"},
+        {"id": "b", "text": "A workflow calls tools one time, while an agent calls tools many times"},
+        {"id": "c", "text": "A workflow follows steps the code sets, while an agent picks its own next step"},
+        {"id": "d", "text": "A workflow answers one question, while an agent handles many questions"}
+      ]
+    },
+    {
+      "id": "q2",
+      "type": "short",
+      "objective": "O4",
+      "stem": "In a workflow, what decides which step runs next: the model or the code written in advance? Answer with one word."
+    },
+    {
+      "id": "q3",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "A makerspace booking request always goes through the same three steps: check the calendar for the requested slot, book it if it is free, then send a confirmation. A teammate wants to build this as an agent because it uses tools. What is the best response?",
+      "options": [
+        {"id": "a", "text": "Agree, because any system that calls tools has to be an agent"},
+        {"id": "b", "text": "Agree, because only an agent can pass results between steps"},
+        {"id": "c", "text": "Disagree, because a workflow cannot call a calendar tool at all"},
+        {"id": "d", "text": "Disagree, because the steps are known, so a fixed workflow is cheaper and more predictable"}
+      ]
+    },
+    {
+      "id": "q4",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "In one design, the model reads a student's message and labels it either 'manual question' or 'booking request'. The program's code then sends it down one of two fixed pipelines based on that label. Who owns the control flow here?",
+      "options": [
+        {"id": "a", "text": "The code owns it; the model only supplies a label the code uses to branch"},
+        {"id": "b", "text": "The model owns it, because the model decided which pipeline runs"},
+        {"id": "c", "text": "The student owns it, because their message sets which pipeline runs"},
+        {"id": "d", "text": "Nobody owns it, because the label can differ from one message to the next"}
+      ]
+    },
+    {
+      "id": "q5",
+      "type": "numeric",
+      "objective": "O4",
+      "stem": "Suppose every model call costs the same. A fixed workflow for answering a manual question always makes 2 model calls. An agent doing the same job averages 6 model calls per question. Over 100 questions, how many more model calls does the agent make than the workflow?",
+      "unit": "calls"
+    },
+    {
+      "id": "q6",
+      "type": "mcq",
+      "objective": "O4",
+      "stem": "Which request is the best candidate for an agent rather than a fixed workflow?",
+      "options": [
+        {"id": "a", "text": "Look up the stated weekly hours of the laser cutter and report them"},
+        {"id": "b", "text": "Find any two-hour slot this week on any machine I am trained for, and book it"},
+        {"id": "c", "text": "Cancel the booking that has the ID the student typed in"},
+        {"id": "d", "text": "Tell me whether the 3D printer is free at 2 pm tomorrow"}
+      ]
+    }
+  ]
+}

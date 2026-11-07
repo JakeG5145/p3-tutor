@@ -1,0 +1,45 @@
+{
+  "id": "0002",
+  "items": [
+    {
+      "id": "q1",
+      "answer": "b",
+      "rationale": "The difference is who owns the control flow: in an agent the model directs its own steps and tool use, and in a workflow predefined code does. Calling the model several times (a) or having tools (c) also happens in workflows, and model size (d) is unrelated.",
+      "distractors": {"a": "M7", "c": "M7", "d": "M7"}
+    },
+    {
+      "id": "q2",
+      "answer": "a",
+      "rationale": "The code fixes the order and the model never chooses a step, so this is a workflow even though it makes two model calls and uses a tool. Using a model, tools or several calls does not make a system an agent; model-owned control flow does.",
+      "distractors": {"b": "M7", "c": "M7"}
+    },
+    {
+      "id": "q3",
+      "answer": "c",
+      "rationale": "Booking is a well-defined task with the same steps every time, which is where a workflow gives predictability and lower cost. The other tasks are open-ended: the steps and number of lookups depend on what is found along the way.",
+      "distractors": {"a": "M8", "b": "M8", "d": "M8"}
+    },
+    {
+      "id": "q4",
+      "answer": 3,
+      "tolerance": 0.01,
+      "rationale": "Workflow: 500 x 3 x $0.002 = $3. Agent: 500 x 6 x $0.002 = $6. The difference is $3. Answering 6 gives the agent's total, not the extra cost. This is the trade-off: agents often cost more and add latency in exchange for flexibility."
+    },
+    {
+      "id": "q5",
+      "answer": "In a workflow the developer's code decides the next step; in an agent the model decides.",
+      "accepted": [
+        "Workflow: predefined code decides. Agent: the model decides.",
+        "The code decides in a workflow and the model decides in an agent.",
+        "In a workflow the programmer fixes the steps in advance; in an agent the model chooses its own steps."
+      ],
+      "rationale": "Both halves are needed: predefined code or the developer owns the flow in a workflow, and the model owns it in an agent. Giving only one half is partial. Reversing them is wrong."
+    },
+    {
+      "id": "q6",
+      "answer": "d",
+      "rationale": "When the path cannot be known in advance, a model-directed loop fits, and a step limit keeps its cost bounded. A fixed single search (a) or a fixed five searches (b) would miss the problem or waste calls. Option c is the over-correction: a fixed workflow is better only when the steps are predictable, not for every part.",
+      "distractors": {"a": "M9", "b": "M9", "c": "M9"}
+    }
+  ]
+}

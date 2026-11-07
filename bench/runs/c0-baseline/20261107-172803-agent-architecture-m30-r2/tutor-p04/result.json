@@ -1,0 +1,120 @@
+{
+  "duration_api_ms": 16244,
+  "stop_reason": "end_turn",
+  "session_id": "f55b522d-f240-467b-bf80-c73c2932d633",
+  "total_cost_usd": 0.0862973,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 16389,
+    "cache_read_input_tokens": 69793,
+    "output_tokens": 1375,
+    "output_tokens_details": {
+      "thinking_tokens": 149
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 16389,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "global",
+    "iterations": [
+      {
+        "input_tokens": 2,
+        "output_tokens": 588,
+        "cache_read_input_tokens": 30453,
+        "cache_creation_input_tokens": 391,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 391
+        },
+        "type": "message"
+      }
+    ],
+    "speed": "standard",
+    "fallback_credit": null
+  },
+  "modelUsage": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1375,
+      "cacheReadInputTokens": 69793,
+      "cacheCreationInputTokens": 16389,
+      "webSearchRequests": 0,
+      "costUSD": 0.0862973,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 149,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16389,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "safety_stops": 0,
+  "is_error": false,
+  "num_turns": 7,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "Neither, as a starting point. \"More agents always give better results\" isn't true, so the five-or-ten question comes too early.\n\n**Why it's tempting:** a team of specialists sounds like a real team, where each person does one job well. But agents aren't free coworkers. Each one is a separate model call with its own context, and every handoff between them costs tokens.\n\n**A worked example.** A student asks: \"Can I use the laser cutter Thursday at 3?\"\n\n- **One agent with tools:** it searches the manual, checks the calendar and books the slot. That's about three tool calls in one context, and the loop you already know handles it.\n- **Ten agents:** a router agent, a manual agent, a calendar agent, a booking agent and so on. The same request now pays for the router's reading, each specialist's reading, and the summaries passed between them. Information also gets lost at each handoff. If the manual agent doesn't pass on \"needs safety training\", the booking agent never learns it.\n\nYou have a small budget, so that overhead matters. It's probably the biggest practical reason to start small.\n\n**When splitting pays off:**\n- One agent's context gets overloaded, for example far too many tools or very long manuals.\n- Subtasks are truly independent and can run in parallel.\n- You've measured that a single agent fails at something and a split fixes it.\n\n**What I'd propose for your design review:** start with one agent plus well-described tools. Where a step is always the same (check the calendar, then book), make it a fixed workflow instead of an agent. Add a second agent only when you can name the failure it fixes.\n\nQuick check: which part of your assistant is most likely to overload a single agent's context? Your answer points to where a split might eventually help.\n\nIf you'd like, I can write a lesson on workflows versus agents and when multi-agent designs pay off. It's central to your mission.",
+  "ttft_ms": 2790,
+  "type": "result",
+  "duration_ms": 16402,
+  "uuid": "d777b301-5850-493b-bd1b-992924ddba21",
+  "ttft_stream_ms": 2142,
+  "time_to_request_ms": 74,
+  "first_content_frame_ms": 2142,
+  "queued_turn_count": 0,
+  "result_index": 0,
+  "model_usage_since_last_result": {
+    "claude-sonnet-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 1375,
+      "cacheReadInputTokens": 69793,
+      "cacheCreationInputTokens": 16389,
+      "webSearchRequests": 0,
+      "costUSD": 0.0862973,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 149,
+      "cacheCreationEphemeral5mInputTokens": 0,
+      "cacheCreationEphemeral1hInputTokens": 16389,
+      "canonicalModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "credential_expires_at": "2026-11-20T19:47:14.372Z"
+}
